@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="hf_video",
-    version="0.0.1",
+    version="0.0.2",
     description="A package for handling videos in Huggingface",
     package_dir={"": "app"},
     packages=find_packages(where="app"),
