@@ -23,7 +23,7 @@ python upload_data.py --path_to_data=videos/ --repo_id=hf_username/my_repo
 
 ### Transformation
 
-```
+```python
 from hf_video import PanAfTransform
 
 # Initialise transform
