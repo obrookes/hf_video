@@ -12,8 +12,18 @@ from datasets import disable_caching
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--path_to_data", type=str)
-    parser.add_argument("--writer_batch_size", type=int, default=100)
-    parser.add_argument("--repo_id", type=str, default="obrookes/more_testing")
+    parser.add_argument(
+        "--writer_batch_size",
+        type=int,
+        default=100,
+        help="Number of rows per write operation for the cache file writer.",
+    )
+    parser.add_argument(
+        "--repo_id",
+        type=str,
+        default="obrookes/more_testing",
+        help="The HF repo to push to.",
+    )
     parser.add_argument("--max_shard_size", type=str, default="10MB")
     parser.add_argument("--cache_dir", type=str, default=None)
     return parser.parse_args()

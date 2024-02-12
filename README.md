@@ -7,8 +7,8 @@ This repository contains a simple commandline tool for uploading camera trap vid
 Install [Anaconda](https://docs.conda.io/en/latest/miniconda.html). Then create a conda environment using the environment file (conda-environment.yml) using the following command.
 
 ```bash
-conda env create --name envname --file=conda-environment.yml
-conda activate envname
+conda env create --name envname
+pip install -r requirements.txt
 ```
 
 ## Usage
