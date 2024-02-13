@@ -18,20 +18,38 @@ Examples of how to use the commandline tool and the transformations package. Sin
 ### Dataset uploader
 
 ```bash
-python upload_data.py --path_to_data=videos/ --repo_id=hf_username/my_repo
+python upload_data.py --path_to_data=videos/ --repo_id=username/dataset
 ```
 
-### Transformation
+Doing this will create a dataset which is retrievable using the Hugging Face `datasets` library:
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset('username/dataset', streaming=True)
+```
+
+### HF Video Transformation
+
+Now you can use the `hf_video` package to retrieve videos as PyTorch tensors:
 
 ```python
 from hf_video import PanAfTransform
+from torch.utils.data import DataLoader
 
 # Initialise transform
-my_transform = PanAfTransform()
+my_transform = PanAfTransform(
+    num_frames=32,
+    image_size=224,
+    ...
+)
+
+# Initialise loader
+loader = DataLoader(dataset)
 
 # Transform batched data
 for batch in loader: # batches of {"video": bytes, "filename": name}
-    t_batch = my_transform(batch)
+    t_batch = my_transform(batch) # batches of {"video": torch.Tensor, "filename": name}
     output = model(t_batch)
-    ...
+    ... 
 ```
