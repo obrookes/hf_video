@@ -21,7 +21,7 @@ def parse_args():
     parser.add_argument(
         "--repo_id",
         type=str,
-        default="obrookes/more_testing",
+        default=None,
         help="The HF repo to push to.",
     )
     parser.add_argument("--max_shard_size", type=str, default="10MB")
@@ -41,7 +41,7 @@ def data_generator(path_to_data):
 
 
 if __name__ == "__main__":
-    # "/home/dl18206/Desktop/phd/data/panaf/PanAf500/videos/raw/all"
+
     args = parse_args()
 
     all_generator = lambda: data_generator(path_to_data=args.path_to_data)
