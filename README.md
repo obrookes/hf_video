@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 Examples of how to use the commandline tool and the transformations package. Since the tool was developed primarily for inference over video footage, please note that the commandline tool does not yet support the upload of the corresponding labels (where they exist).
 
-### Dataset uploader
+### Dataset Uploader
 
 ```bash
 python upload_data.py --path_to_data=videos/ --repo_id=username/dataset
