@@ -41,6 +41,8 @@ def data_generator(path_to_data):
 
 
 if __name__ == "__main__":
+    
+    print("==> Running HF Video data uploader")
 
     args = parse_args()
 
