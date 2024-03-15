@@ -18,7 +18,7 @@ Examples of how to use the commandline tool and the transformations package. Sin
 ### Dataset Uploader
 
 ```bash
-python upload_data.py --path_to_data=videos/ --repo_id=username/dataset
+python upload_data.py --path_to_data=videos/ --repo_id=username/dataset # see cache dir for memory issues...
 ```
 
 Doing this will create a dataset which is retrievable using the Hugging Face `datasets` library:
